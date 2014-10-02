@@ -1,0 +1,25 @@
+{
+  "name": "private-lodash-mixins",
+  "version": "0.1.0",
+  "description": "Lodash mixins used by BitMEX.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:BitMEX/lodash-mixins.git"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "Samuel Reed <sam@tixelated.com> (http://strml.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BitMEX/lodash-mixins/issues"
+  },
+  "homepage": "https://github.com/BitMEX/lodash-mixins",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  }
+}
