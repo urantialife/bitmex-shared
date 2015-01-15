@@ -31,3 +31,23 @@ _.mixin({
 _.mixin({'pluralize': function(number){
   return number === 1 ? '' : 's';
 }});
+
+// _.result with support for arguments.
+//
+// Usage:
+//
+// var messages = {
+//   aKey: function(data, moreData) { return data + moreData; },
+//   bKey: 'okay'
+// }
+// 
+// var someData = 'foo', someMoreData = 'bar';
+// var msg = _.resultWithArgs(messages, 'aKey', someData, someMoreData) // 'foobar'
+// var msg2 = _.resultWithArgs(messages, 'bKey', someData, someMoreData) // 'okay'
+//
+_.mixin({'resultWithArgs': function(object, key) {
+  if (object) {
+    var value = object[key];
+    return typeof value === "function" ? object[key].apply(object, [].slice.call(arguments, 2)) : value;
+  }
+}});
