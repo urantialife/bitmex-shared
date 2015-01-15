@@ -48,6 +48,11 @@ _.mixin({'pluralize': function(number){
 _.mixin({'resultWithArgs': function(object, key) {
   if (object) {
     var value = object[key];
-    return typeof value === "function" ? object[key].apply(object, [].slice.call(arguments, 2)) : value;
+    return typeof value === "function" ? 
+      arguments.length > 2 ? 
+        object[key].apply(object, [].slice.call(arguments, 2)) : 
+        object[key]()
+      :
+      value;
   }
 }});
