@@ -32,6 +32,15 @@ _.mixin({'pluralize': function(number){
   return number === 1 ? '' : 's';
 }});
 
+// Capitalize a string.
+//
+// Usage:
+//
+// _.capitalize('daily') // -> 'Daily'
+_.mixin({'capitalize': function(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}});
+
 // _.result with support for arguments.
 //
 // Usage:
