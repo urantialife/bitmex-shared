@@ -3,11 +3,11 @@ var _ = require('lodash');
 
 
 // Simple way to filter by a deep arg.
-// 
+//
 // Usage:
-// 
+//
 // var collections = [
-//     {id: 1, name: 'xyz'}, 
+//     {id: 1, name: 'xyz'},
 //     {id: 2,  name: 'ds'},
 //     {id: 3,  name: 'rtrt'},
 //     {id: 4,  name: 'nhf'},
@@ -24,7 +24,7 @@ _.mixin({
 });
 
 // Simple plugin used for simple english message files (works 98% of the time, all the time)
-// 
+//
 // Usage:
 //
 // var msg = "You have " + count + _.pluralize(" message", count) + ".";
@@ -49,7 +49,7 @@ _.mixin({'capitalize': function(string) {
 //   aKey: function(data, moreData) { return data + moreData; },
 //   bKey: 'okay'
 // }
-// 
+//
 // var someData = 'foo', someMoreData = 'bar';
 // var msg = _.resultWithArgs(messages, 'aKey', someData, someMoreData) // 'foobar'
 // var msg2 = _.resultWithArgs(messages, 'bKey', someData, someMoreData) // 'okay'
@@ -57,11 +57,20 @@ _.mixin({'capitalize': function(string) {
 _.mixin({'resultWithArgs': function(object, key) {
   if (object) {
     var value = object[key];
-    return typeof value === "function" ? 
-      arguments.length > 2 ? 
-        object[key].apply(object, [].slice.call(arguments, 2)) : 
+    return typeof value === "function" ?
+      arguments.length > 2 ?
+        object[key].apply(object, [].slice.call(arguments, 2)) :
         object[key]()
       :
       value;
   }
+}});
+
+// Remove undefined/null from objects.
+_.mixin({'trimObject': function(obj) {
+  return _.forOwn(obj, function(val,key){
+    if(val == null){
+      delete obj[key];
+    }
+  });
 }});
