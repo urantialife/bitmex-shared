@@ -77,7 +77,7 @@ _.mixin({'trimObject': function(obj) {
 
 // Same as _.merge, but merges array arguments together (deeper merge).
 // If given an explicit null, will overwrite with null.
-_.mixin({'mergeWithArrays': function(arguments) {
+_.mixin({'mergeWithArrays': function() {
   var args = _.toArray(arguments);
   args.push(function(a, b) {
     // Allow using null to overwrite
