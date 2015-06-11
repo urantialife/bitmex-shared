@@ -1,6 +1,6 @@
 {
   "name": "private-lodash-mixins",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Lodash mixins used by BitMEX.",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/BitMEX/lodash-mixins",
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "*"
   }
 }
