@@ -57,12 +57,19 @@ _.mixin({'capitalize': function(string) {
 _.mixin({'resultWithArgs': function(object, key) {
   if (object) {
     var value = object[key];
-    return typeof value === "function" ?
-      arguments.length > 2 ?
-        object[key].apply(object, [].slice.call(arguments, 2)) :
-        object[key]()
-      :
-      value;
+    var isFunc = typeof value === 'function';
+    var args;
+    if (isFunc && arguments.length > 2) {
+      args = Array(arguments.length - 2);
+      for (var i = 2; i < arguments.length; i++) {
+        args[i - 2] = arguments[i];
+      }
+      return object[key]().apply(object, args);
+    } else if (isFunc) {
+      return object[key]();
+    } else {
+      return value;
+    }
   }
 }});
 
@@ -78,12 +85,16 @@ _.mixin({'trimObject': function(obj) {
 // Same as _.merge, but merges array arguments together (deeper merge).
 // If given an explicit null, will overwrite with null.
 _.mixin({'mergeWithArrays': function() {
-  var args = _.toArray(arguments);
+  var args = Array(arguments.length);
+  for (var i = 0; i < args.length; i++) {
+    args[i] = arguments[i];
+  }
   args.push(function(a, b) {
     // Allow using null to overwrite
     if (_.isArray(a) && b === null) return null;
     // Concat arrays of options together
     if (_.isArray(a) && b) return a.concat(b);
   })
-  return _.merge.apply(_, args);
+  var merge = _.mergeWith || _.merge; // Lodash 3/4 compat
+  return merge.apply(_, args);
 }})
