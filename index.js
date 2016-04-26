@@ -64,7 +64,7 @@ _.mixin({'resultWithArgs': function(object, key) {
       for (var i = 2; i < arguments.length; i++) {
         args[i - 2] = arguments[i];
       }
-      return object[key]().apply(object, args);
+      return object[key].apply(object, args);
     } else if (isFunc) {
       return object[key]();
     } else {
