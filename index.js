@@ -1,15 +1,15 @@
 // @flow
 'use strict';
-const _ = require('lodash');
+var _ = require('lodash');
 
 module.exports = {
 
   // Remove undefined/null/empty string from objects.
-  trimObject(obj/*: Object */)/*: Object */ {
-    const keys = Object.keys(obj);
-    const out = {};
-    for (let i = 0; i < keys.length; i++) {
-      const val = obj[keys[i]];
+  trimObject: function trimObject(obj /*: Object */)/*: Object */ {
+    var keys = Object.keys(obj);
+    var out = {};
+    for (var i = 0; i < keys.length; i++) {
+      var val = obj[keys[i]];
       if (val === '' || val === null || val === undefined) continue;
       out[keys[i]] = val;
     }
@@ -18,9 +18,9 @@ module.exports = {
 
   // Same as _.merge, but merges array arguments together (deeper merge).
   // If given an explicit null, will overwrite with null.
-  mergeWithArrays()/*: Object */ {
-    const args = new Array(arguments.length);
-    for (let i = 0; i < arguments.length; i++) {
+  mergeWithArrays: function mergeWithArrays()/*: Object */ {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < arguments.length; i++) {
       args[i] = arguments[i];
     }
 
