@@ -1,3 +1,4 @@
+// @flow
 'use strict';
 const _ = require('lodash');
 
@@ -24,7 +25,7 @@ module.exports = {
       // Concat arrays of options together
       if (_.isArray(a) && b) return a.concat(b);
     });
-    return _.mergeWith.apply(_, args);
+    return _.mergeWith(...args);
   }
 
 };
