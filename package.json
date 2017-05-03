@@ -1,25 +1,27 @@
 {
-  "name": "private-lodash-mixins",
-  "version": "0.2.1",
-  "description": "Lodash mixins used by BitMEX.",
+  "name": "bitmex-shared",
+  "version": "0.3.0",
+  "description": "Performant utilty fns in use by BitMEX.",
   "main": "index.js",
+  "license": "UNLICENSED",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">= 6"
+  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:BitMEX/lodash-mixins.git"
+    "url": "git@github.com:BitMEX/bitmex-shared.git"
   },
   "keywords": [
-    "lodash"
   ],
-  "author": "Samuel Reed <sam@tixelated.com> (http://strml.net/)",
-  "license": "MIT",
+  "author": "Samuel Reed <sam@bitmex.com> (http://strml.net/)",
   "bugs": {
-    "url": "https://github.com/BitMEX/lodash-mixins/issues"
+    "url": "https://github.com/BitMEX/bitmex-shared/issues"
   },
-  "homepage": "https://github.com/BitMEX/lodash-mixins",
+  "homepage": "https://github.com/BitMEX/bitmex-shared",
   "dependencies": {
-    "lodash": "*"
+    "lodash": "^4"
   }
 }
