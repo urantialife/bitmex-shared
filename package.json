@@ -14,7 +14,9 @@
     "type": "git",
     "url": "git@github.com:BitMEX/bitmex-shared.git"
   },
-  "keywords": [
+  "files": [
+    "bench.js",
+    ".flowconfig"
   ],
   "author": "Samuel Reed <sam@bitmex.com> (http://strml.net/)",
   "bugs": {
