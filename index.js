@@ -19,7 +19,7 @@ module.exports = {
   // Same as _.merge, but merges array arguments together (deeper merge).
   // If given an explicit null, will overwrite with null.
   // Intentionally not using rest/spread for compatibility reasons (uglify)
-  mergeWithArrays(/*::..._args: Array<any>*/)/*: Object */ {
+  mergeWithArrays: function mergeWithArrays(/*::..._args: Array<any>*/)/*: Object */ {
     var args = new Array(arguments.length);
     for (var i = 0; i < arguments.length; i++) {
       args[i] = arguments[i];
