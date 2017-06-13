@@ -1,6 +1,6 @@
 {
   "name": "bitmex-shared",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Performant utilty fns in use by BitMEX.",
   "main": "index.js",
   "license": "UNLICENSED",
