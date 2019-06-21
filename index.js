@@ -10,7 +10,8 @@ module.exports = {
     var out = {};
     for (var i = 0; i < keys.length; i++) {
       var val = obj[keys[i]];
-      if (val === '' || val === null || val === undefined) continue;
+      // Ignore __proto__ to avoid prototype pollution
+      if (val === '' || val === null || val === undefined || val === '__proto__') continue;
       out[keys[i]] = val;
     }
     return out;
